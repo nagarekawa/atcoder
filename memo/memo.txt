@@ -1,0 +1,33 @@
+#@その他
+#整数 整数問題
+#全探索
+#累積和 区間の和を何回も取得したいとき．いもす法してから累積和をとるともいう
+#いもす法 区間ごとの値が与えられたときに，一区間の和を出す．
+#set
+#sort
+#浮動小数点
+#itertools
+#0除算
+#Counter from collections import Counter
+#dp
+#配るdp
+#bit全探索
+#組合せ
+#Union-Find
+#mod
+#確率
+#期待値
+#itertools
+#オーダー 計算量，値の上限が難しい
+
+
+abc179まで
+
+
+--標準関数--
+S.islower()
+S.isupper()
+
+
+--回文チェック--
+t==t[::-1]
