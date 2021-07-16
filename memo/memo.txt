@@ -20,6 +20,7 @@
 #itertools
 #オーダー 計算量，値の上限が難しい
 #binary search 二分探索
+#dict
 
 
 abc179まで
