@@ -19,6 +19,7 @@
 #期待値
 #itertools
 #オーダー 計算量，値の上限が難しい
+#binary search 二分探索
 
 
 abc179まで
