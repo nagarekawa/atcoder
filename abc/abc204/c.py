@@ -1,17 +1,29 @@
+#dfs
+import sys
 
-
-
-# for i in range(m):
-#     group[a[i]-1][b[i]-1].append(b[i])
-# for i in range(m):
-#     for j in range(m):
-
-
+sys.setrecursionlimit(10000)
 n, m = map(int, input().split())
-graph = [[] for _ in range(m)]
-for _ in range(m):
-    a, b = map(int, input().split())
-    graph[a-1].append(b-1)
+a = [0] * m
+b = [0] * m
+for i in range(m):
+    a[i], b[i] = map(int, input().split())
+check = [[] for i in range(n)]
 
-    print(graph)
-print(graph)  # [[2, 3, 5], ..., [1, 3, 4]]
+for i in range(m):
+    check[a[i] - 1].append(b[i] - 1)
+
+
+def dfs(ima):
+    if (temp[ima] == True):
+        return 0
+    temp[ima] = True
+    for i in check[ima]:
+        dfs(i)
+
+
+ans = 0
+for i in range(n):
+    temp = [False] * n
+    dfs(i)
+    ans = ans + sum(temp)
+print(ans)
