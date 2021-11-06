@@ -7,7 +7,12 @@ def dfs(minn,maxx,size,depth):
         print(*permutation,sep='')
     else:
         for i in range(maxx-minn+1):
-            permutation[depth]=minn+i
-            dfs(minn,maxx,size,depth+1)
-
+            if(used[i]==False):
+                permutation[depth]=minn+i
+                used[i]=True
+                dfs(minn,maxx,size,depth+1)
+                used[i]=False
+            else:
+                pass
+used=[False]*m
 dfs(a,b,n,0)
