@@ -1,3 +1,4 @@
+#sort
 h,w,n=map(int,input().split())
 a=[0]*n
 b=[0]*n
@@ -6,12 +7,9 @@ for i in range(n):
 
 yoko=[]
 tate=[]
-for i in range(n):
-    yoko.append(a[i])
-    tate.append(b[i])
-yoko=sorted(list(set(yoko)))
-tate=sorted(list(set(tate)))
 
-for i in range(len(yoko)):
-    for j in range(len(tate)):
-        print(i,j)
+yoko={x:i+1 for i,x in enumerate(sorted(list(set(b))))}
+tate={x:i+1 for i,x in enumerate(sorted(list(set(a))))}
+
+for i in range(n):
+    print(tate[a[i]],yoko[b[i]])
