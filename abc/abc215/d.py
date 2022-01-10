@@ -21,32 +21,24 @@ n,m=map(int,input().split())
 a=list(map(int,input().split()))
 naka=[]
 
-
-# print('a')
-# for k in range(m+1):
 for i in range(n):
     da=factorization(a[i])
     for j in range(len(da)):
         if(da[0][0]==1):
             break
         naka.append(da[j][0])
-# print(naka)
+
 naka=list(set(naka))
 
-# print(naka)
-# print(len(naka))
-# print('b')
-ans=[]
 lis=[0]*(m+1)
-#
-# print(naka)
+
 for i in range(len(naka)):
     j=1
     while(naka[i]*j<=(m)):
         lis[naka[i]*j]=1
         j=j+1
 
-# print(lis)
+
 print(m-sum(lis))
 for i in range(1,len(lis)):
     if(lis[i]==0):
