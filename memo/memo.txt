@@ -20,6 +20,7 @@
 #itertools
 #オーダー 計算量，値の上限が難しい
 #binary search 二分探索
+#binary trie 二分探索木
 #dict
 #条件分け　条件分け
 #dfs 深さ優先探索
