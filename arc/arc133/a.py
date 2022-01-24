@@ -1,3 +1,4 @@
+#@
 n=int(input())
 a=list(map(int,input().split()))
 if(n==1):
@@ -6,6 +7,7 @@ if(n==1):
 ans=[]
 lis=[-1 for i in range(n)]
 kesu=-1
+
 for i in range(n-1):
     if(a[i]>a[i+1] ):
         kesu=a[i]
@@ -16,6 +18,7 @@ for i in range(n):
         pass
     else:
         ans.append(a[i])
+
 
 if(ans==a):
     kesu=a[-1]
