@@ -1,14 +1,9 @@
 n,m=map(int,input().split())
-a=[0 for i in range(4)]
-for i in range(4):
-    a[i]=input()
-print(a)
-
-pea=[-1 for i in range(2*n)]
+a=[0 for i in range(2*n)]
 for i in range(2*n):
-    if(i%2==0):
-        pea[i]=i+1
-print(pea)
+    a[i]=input()
+
+
 def kekka(iti,ni):
     if(iti=='G' and ni=='C'):
         return 1
@@ -29,19 +24,20 @@ def kekka(iti,ni):
     elif(iti=='P' and ni=='G'):
         return 1
 ans=[0 for i in range(2*n)]
+indices=[i for i in range(n*2)]
+sorted_indices=sorted(indices,key=lambda i :-ans[i])
 for i in range(m):
-    for j in range(2*n):
-        if(pea[j]!=-1):
-            iti=a[j][i]
-            ni=a[pea[j]][i]
-            kotae=kekka(iti,ni)
-            if(kotae==1):
-                ans[j]=ans[j]+1
-            elif(kotae==2):
-                ans[pea[j]]=ans[pea[j]]+1
-            else:
-                pass
-    
+    for j in range(n):
+        iti=a[sorted_indices[j*2]][i]
+        ni=a[sorted_indices[j*2+1]][i]
+        kotae=kekka(iti,ni)
+        if(kotae==1):
+            ans[sorted_indices[j*2]]=ans[sorted_indices[j*2]]+1
+        elif(kotae==2):
+            ans[sorted_indices[j*2+1]]=ans[sorted_indices[j*2+1]]+1
+        else:
+            pass
 
-
-
+    sorted_indices=sorted(indices,key=lambda i :-ans[i])
+for i in range(2*n):
+    print(sorted_indices[i]+1)
